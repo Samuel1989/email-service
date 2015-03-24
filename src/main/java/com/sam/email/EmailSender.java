@@ -11,17 +11,19 @@ public class EmailSender {
 		sendGrid = new SendGrid(username, password);
 	}
 	
-	public void send(EmailObj emailObj) {
+	public String send(EmailObj emailObj) {
 		Email email = new Email();
 		email.addTo(emailObj.getRecipient());
 		email.setFrom(emailObj.getSender());
 		email.setSubject(emailObj.getSubject());
 		email.setText(emailObj.getMessage());
+		String response = "";
 		try {
-			sendGrid.send(email);
+			response = sendGrid.send(email).getMessage();
 		} catch (SendGridException e) {
 			e.printStackTrace();
 		}
+		return response;
 	}
 
 }

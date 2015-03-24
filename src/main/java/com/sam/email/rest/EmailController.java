@@ -14,8 +14,7 @@ public class EmailController {
 	@RequestMapping(value = "/rest/sendemail", method = RequestMethod.POST)
 	public String sendEmail(@RequestBody EmailObj emailObj) {
 		EmailSender eSender = new EmailSender("", "");
-		eSender.send(emailObj);
-		return "";
+		return eSender.send(emailObj);
 	}
 
 }
