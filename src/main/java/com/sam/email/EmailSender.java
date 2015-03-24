@@ -13,7 +13,9 @@ public class EmailSender {
 	
 	public String send(EmailObj emailObj) {
 		Email email = new Email();
-		email.addTo(emailObj.getRecipient());
+		email.addTo(emailObj.getRecipients());
+		email.addCc(emailObj.getCopyRecipients());
+		email.addBcc(emailObj.getBlindRecipients());
 		email.setFrom(emailObj.getSender());
 		email.setSubject(emailObj.getSubject());
 		email.setText(emailObj.getMessage());

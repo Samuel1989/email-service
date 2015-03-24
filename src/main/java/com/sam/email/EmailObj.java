@@ -1,22 +1,34 @@
 package com.sam.email;
 
 public class EmailObj {
-	private String recipient;
+	private String[] recipients;
+	private String[] copyRecipients;
+	private String[] blindRecipients;
 	private String message;
 	private String sender;
 	private String subject;
 	
 	public EmailObj() {  }
 	
-	public EmailObj(String recipient, String sender, String subject, String message) {
-		this.recipient = recipient;
+	public EmailObj(String[] recipients, String[] copyRecipients, String[] blindRecipients, String sender, String subject, String message) {
+		this.recipients = recipients;
 		this.sender = sender;
 		this.subject = subject;
 		this.message = message;
+		this.copyRecipients = copyRecipients;
+		this.blindRecipients = blindRecipients;
 	}
 	
-	public void setRecipient(String recipient) {
-		this.recipient = recipient;
+	public void setRecipients(String[] recipient) {
+		this.recipients = recipient;
+	}
+	
+	public void setCopyRecipients(String[] copyRecipient) {
+		this.copyRecipients = copyRecipient;
+	}
+	
+	public void setBlindRecipients(String[] blindRecipient) {
+		this.blindRecipients = blindRecipient;
 	}
 	
 	public void setSender(String sender) {
@@ -31,8 +43,16 @@ public class EmailObj {
 		this.message = message;
 	}
 	
-	public String getRecipient() {
-		return recipient;
+	public String[] getRecipients() {
+		return recipients;
+	}
+	
+	public String[] getCopyRecipients() {
+		return copyRecipients;
+	}
+	
+	public String[] getBlindRecipients() {
+		return blindRecipients;
 	}
 	
 	public String getSender() {
