@@ -14,6 +14,11 @@ git clone https://github.com/Samuel1989/email-service.git
 ```
 cd email-service
 ```
+* Edit the src/resources/config.properties file to include your sendgrid username and password.
+```
+username=Add username here...
+password=Add password here...
+```
 * Build the project using Maven.
 ```
 mvn package
